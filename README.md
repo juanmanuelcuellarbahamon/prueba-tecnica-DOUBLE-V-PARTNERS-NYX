@@ -25,9 +25,9 @@ docker-compose up --build
 2. Verificar contenedores activos:
 docker ps
 3. Acceso:
-Frontend Angular: http://localhost:4200
-Backend Spring Boot / GraphQL: http://localhost:8080/graphql
-PostgreSQL: puerto 5432
+- **Frontend Angular:** [http://localhost:4200](http://localhost:4200)  
+- **Backend Spring Boot / GraphQL:** [http://localhost:8080/graphql](http://localhost:8080/graphql)  
+- **PostgreSQL:** puerto `5432`
 4. Para detener todo:
 docker-compose down
 
