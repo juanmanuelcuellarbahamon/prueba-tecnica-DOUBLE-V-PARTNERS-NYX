@@ -37,7 +37,7 @@ docker-compose down
 
 ## Graphql
 
-```bash
+```graphql
 query {
   getAllTickets(page: 0, size: 10) {
     id
