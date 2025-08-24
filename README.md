@@ -1,20 +1,24 @@
 # prueba-tecnica-DOUBLE-V-PARTNERS-NYX
 
-Requisitos
+## Requisitos
 
-Docker y Docker Compose instalados
+### Docker y Docker Compose instalados
 
-Node.js 22+ (solo si quieres reconstruir Angular fuera de Docker)
+### Node.js 22+ (solo si quieres reconstruir Angular fuera de Docker)
 
-Maven 3.8+ (solo si quieres reconstruir Spring Boot fuera de Docker)
+### Maven 3.8+ (solo si quieres reconstruir Spring Boot fuera de Docker)
 
-Estructura del proyecto
+## Estructura del proyecto
+
+```bash
 
 ├── backend_2       # Proyecto Spring Boot
 ├── frontend_1      # Proyecto Angular
 └── docker-compose.yml
 
-Ejecutar todo con Docker
+```
+
+## Ejecutar todo con Docker
 
 1. Construir y levantar contenedores:
 docker-compose up --build
@@ -27,8 +31,9 @@ PostgreSQL: puerto 5432
 4. Para detener todo:
 docker-compose down
 
-Graphql
+## Graphql
 
+```bash
 query {
   getAllTickets(page: 0, size: 10) {
     id
@@ -72,3 +77,5 @@ mutation {
 mutation {
   deleteTicket(id: 1)
 }
+
+```
