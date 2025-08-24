@@ -36,6 +36,20 @@ docker ps
 ```bash
 docker-compose down
 ```
+
+## Configuración del Token de GitHub
+
+1. Ve a [Configuración de GitHub → Developer settings → Personal Access Tokens → Tokens (classic)](https://github.com/settings/tokens)
+2. Genera un nuevo token con los permisos `read:user` y `user:email`.
+3. Añade el token en `frontend_1/src/app/environments/environment.ts` y `frontend_1/src/app/environments/environment.prod.ts`:
+
+```ts
+export const environment = {
+  production: false,
+  githubToken: "TU_TOKEN_PERSONAL_DE_GITHUB"
+};
+```
+
 ## Graphql
 
 ```graphql
