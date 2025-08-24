@@ -1,0 +1,42 @@
+<form [formGroup]="searchForm" (ngSubmit)="search()" class="search-form">
+  <input type="text" formControlName="query" placeholder="Buscar usuario..." class="search-input" />
+  <button class="btn" type="submit"><fa-icon [icon]="faSearch"></fa-icon> Buscar</button>
+</form>
+
+@if (queryControl?.hasError('required') && queryControl?.touched) {
+<p class="error"><fa-icon [icon]="faError"></fa-icon> El campo de búsqueda no puede estar vacío.</p>
+} @if (queryControl?.hasError('minlength') && queryControl?.touched) {
+<p class="error"><fa-icon [icon]="faError"></fa-icon> La búsqueda debe tener mínimo 4 caracteres</p>
+}
+
+<div class="chart-wrapper">
+  <canvas #followersChart aria-label="Followers chart" role="img"></canvas>
+</div>
+
+<div class="grid-container">
+  @for (user of users$ | async; track user.id) {
+  <div class="user-card">
+    <img [src]="user.avatar_url" [alt]="user.login" class="avatar" />
+    <h3>{{ user.login }}</h3>
+    <p class="name">Nombre: {{ user.name }}</p>
+    <p class="email">Correo: {{ user.email }}</p>
+    <p class="score">Score: {{ user.score }}</p>
+    <p><fa-icon [icon]="faUsers"></fa-icon> Followers: {{ user.followers }}</p>
+    <button type="button" class="btn" (click)="checkScore(user)">
+      <fa-icon [icon]="faGlobe"></fa-icon> Ver Perfil
+    </button>
+  </div>
+  } @empty {
+  <p class="empty">No users found.</p>
+  }
+</div>
+
+<div class="pagination">
+  <button class="btn" (click)="prevPage()" [disabled]="currentPage === 1">
+    <fa-icon [icon]="faArrowLeft"></fa-icon> Anterior
+  </button>
+  <span>Página {{ currentPage }}</span>
+  <button class="btn" (click)="nextPage()">
+    Siguiente <fa-icon [icon]="faArrowRight"></fa-icon>
+  </button>
+</div>
