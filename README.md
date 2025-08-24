@@ -21,9 +21,13 @@
 ## Ejecutar todo con Docker
 
 1. Construir y levantar contenedores:
+```bash
 docker-compose up --build
+```
 2. Verificar contenedores activos:
+```bash
 docker ps
+```
 3. Acceso:
 - **Frontend Angular:** [http://localhost:4200](http://localhost:4200)  
 - **Backend Spring Boot / GraphQL:** [http://localhost:8080/graphql](http://localhost:8080/graphql)  
