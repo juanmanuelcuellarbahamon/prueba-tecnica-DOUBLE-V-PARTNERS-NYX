@@ -33,8 +33,9 @@ docker ps
 - **Backend Spring Boot / GraphQL:** [http://localhost:8080/graphql](http://localhost:8080/graphql)  
 - **PostgreSQL:** puerto `5432`
 4. Para detener todo:
+```bash
 docker-compose down
-
+```
 ## Graphql
 
 ```graphql
